@@ -1,8 +1,6 @@
-import { Outlet } from 'react-router-dom';
+import { Directory } from '../../components';
 
-import Directory from '../../components/directory/directory';
-
-const Home = () => {
+export const Home = () => {
   const categories = [
     {
       id: 1,
@@ -34,9 +32,6 @@ const Home = () => {
   return (
     <div>
       <Directory categories={categories} />
-      <Outlet />
     </div>
   );
 };
-
-export default Home;

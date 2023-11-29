@@ -1,5 +1,5 @@
-export * from './category-item/category-item';
 export * from './directory/directory';
+export * from './directory-item/directory-item';
 export * from './navigation/navigation';
 export * from './button/button';
 export * from './form-input/form-input';

@@ -3,19 +3,13 @@ import { Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import { CategoriesPreview, Category } from '../';
-import { getCategoriesAndDocuments } from '../../utils';
-import { setCategories } from '../../store';
+import { fetchCategoriesStartAsync } from '../../store';
 
 export const Shop = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        const getCategoriesMap = async () => {
-            const categoriesArray = await getCategoriesAndDocuments('categories');
-            dispatch(setCategories(categoriesArray));
-        };
-
-        getCategoriesMap();
+        dispatch(fetchCategoriesStartAsync());
     }, [dispatch]);
 
     return (
@@ -25,4 +19,3 @@ export const Shop = () => {
         </Routes>
     );
 };
-

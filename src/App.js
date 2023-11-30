@@ -1,15 +1,32 @@
-import { useContext } from "react";
-import { Routes, Route, Navigate, } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { UserContext } from "./contexts/user";
-
+import { setCurrentUser, selectCurrentUser } from './store';
 import { Home, Authentication, Shop, Checkout } from './pages';
 import { Navigation } from './components';
 
-
+import {
+  onAuthStateChangedListener,
+  createUserDocumentFromAuth,
+} from './utils';
 
 const App = () => {
-  const { currentUser } = useContext(UserContext);
+  const dispatch = useDispatch();
+  const currentUser = useSelector(selectCurrentUser);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChangedListener((user) => {
+      if (user) {
+        createUserDocumentFromAuth(user);
+      }
+
+      dispatch(setCurrentUser(user));
+    });
+
+    return unsubscribe;
+  }, [dispatch]);
+
   return (
     <Routes>
       <Route path='/' element={<Navigation />}>

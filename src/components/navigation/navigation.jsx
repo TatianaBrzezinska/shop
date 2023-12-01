@@ -1,11 +1,10 @@
 import { Fragment } from 'react';
 import { Outlet } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { CartIcon, CartDropdown } from '../../components';
 import { ReactComponent as CrwnLogo } from '../../assets/crown.svg';
-import { selectCurrentUser, selectIsCartOpen } from '../../store';
-import { signOutUser } from '../../utils';
+import { selectCurrentUser, selectIsCartOpen, signOutStart } from '../../store';
 
 import {
   NavigationContainer,
@@ -15,9 +14,10 @@ import {
 } from './navigation.styles.jsx';
 
 export const Navigation = () => {
+  const dispatch = useDispatch();
   const currentUser = useSelector(selectCurrentUser);
   const isCartOpen = useSelector(selectIsCartOpen);
-
+  const signOutUser = () => dispatch(signOutStart());
   return (
     <Fragment>
       <NavigationContainer>

@@ -4,23 +4,21 @@ import { getCategoriesAndDocuments } from '../../utils';
 
 import {
     fetchCategoriesSuccess,
-    fetchCategoriesFailure,
-} from './category.action';
-
-import { CATEGORIES_ACTION_TYPES } from './category.types';
+    fetchCategoriesFailed,
+} from './category.reducer';
 
 export function* fetchCategoriesAsync() {
     try {
         const categoriesArray = yield call(getCategoriesAndDocuments, 'categories');
         yield put(fetchCategoriesSuccess(categoriesArray));
     } catch (error) {
-        yield put(fetchCategoriesFailure(error));
+        yield put(fetchCategoriesFailed(error));
     }
 }
 
 export function* onFetchCategories() {
     yield takeLatest(
-        CATEGORIES_ACTION_TYPES.FETCH_CATEGORIES_START,
+        'categories/fetchCategoriesStart',
         fetchCategoriesAsync
     );
 }

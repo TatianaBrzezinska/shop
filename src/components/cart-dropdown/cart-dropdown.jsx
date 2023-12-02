@@ -12,7 +12,7 @@ import {
 } from './cart-dropdown.styles';
 
 export const CartDropdown = () => {
-    const { cartItems } = useSelector(selectCartItems);
+    const cartItems = useSelector(selectCartItems);
     const navigate = useNavigate();
 
     const goToCheckoutHandler = () => {

@@ -31,3 +31,5 @@ yarn-error.log*
 # IDE
 .idea/
 *.swp
+# Local Netlify folder
+.netlify

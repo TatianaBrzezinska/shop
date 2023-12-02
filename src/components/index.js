@@ -12,4 +12,5 @@ export * from './cart-item/cart-item';
 export * from './checkout-item/checkout-item';
 export * from './category-preview/category-preview';
 export * from './spinner/spinner';
+export * from './payment-form/payment-form';
 

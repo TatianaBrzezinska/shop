@@ -21,3 +21,5 @@ export const FormInput: FC<FormInputProps> = ({ label, ...otherProps }) => {
     </Group>
   );
 };
+
+export default FormInput;

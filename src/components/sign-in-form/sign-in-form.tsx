@@ -79,3 +79,5 @@ export const SignInForm = () => {
     </SignInContainer>
   );
 };
+
+export default SignInForm;

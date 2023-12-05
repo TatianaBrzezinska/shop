@@ -20,3 +20,5 @@ export const CartIcon = () => {
     </CartIconContainer>
   );
 };
+
+export default CartIcon;

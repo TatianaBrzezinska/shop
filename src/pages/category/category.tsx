@@ -15,7 +15,7 @@ export const Category = () => {
   const { category } = useParams<
     keyof CategoryRouteParams
   >() as CategoryRouteParams;
-  
+
   const categoriesMap = useSelector(selectCategoriesMap);
   const isLoading = useSelector(selectIsLoading);
   const [products, setProducts] = useState(categoriesMap[category]);
@@ -40,3 +40,5 @@ export const Category = () => {
     </Fragment>
   );
 };
+
+export default Category;

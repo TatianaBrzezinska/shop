@@ -30,3 +30,5 @@ export const CategoryPreview: FC<CategoryPreviewProps> = ({
     </Preview>
   </CategoryPreviewContainer>
 );
+
+export default CategoryPreview;

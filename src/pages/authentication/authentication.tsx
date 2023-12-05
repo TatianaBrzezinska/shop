@@ -10,3 +10,5 @@ export const Authentication = () => {
     </AuthenticationContainer>
   );
 };
+
+export default Authentication;

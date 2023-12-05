@@ -77,3 +77,5 @@ export const PaymentForm = () => {
     </PaymentFormContainer>
   );
 };
+
+export default PaymentForm;

@@ -14,7 +14,7 @@ import {
   SignOutButton,
 } from "./navigation.styles";
 
-export const Navigation = () => {
+const Navigation = () => {
   const dispatch = useDispatch();
   const currentUser = useSelector(selectCurrentUser);
   const isCartOpen = useSelector(selectIsCartOpen);
@@ -45,3 +45,5 @@ export const Navigation = () => {
     </Fragment>
   );
 };
+
+export default Navigation;

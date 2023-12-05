@@ -37,3 +37,5 @@ export const Button: FC<ButtonProps> = ({
     </CustomButton>
   );
 };
+
+export default Button;

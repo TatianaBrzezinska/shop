@@ -1,4 +1,4 @@
-import { Directory } from '../../components';
+import { Directory } from "../../components";
 
 export const Home = () => {
   return (
@@ -7,3 +7,5 @@ export const Home = () => {
     </div>
   );
 };
+
+export default Home;

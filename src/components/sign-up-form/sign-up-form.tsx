@@ -96,3 +96,5 @@ export const SignUpForm = () => {
     </SignUpContainer>
   );
 };
+
+export default SignUpForm;
